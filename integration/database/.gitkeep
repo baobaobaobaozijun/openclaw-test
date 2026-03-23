@@ -1,0 +1,14 @@
+# Database Integration Tests
+
+This directory contains database integration tests.
+
+## Running Tests
+
+```bash
+./run-db-tests.sh
+```
+
+## Requirements
+
+- MySQL service must be running
+- Test database credentials configured

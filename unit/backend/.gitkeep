@@ -1,0 +1,12 @@
+# Unit Test Placeholder
+
+This directory contains unit tests for the backend.
+
+## Setup
+
+1. Ensure Maven is installed
+2. Run: `mvn test`
+
+## Structure
+
+Place JUnit test files here following the package structure of the backend code.

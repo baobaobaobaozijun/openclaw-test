@@ -1,0 +1,20 @@
+# Performance Test Scripts
+
+This directory contains performance test scripts (k6/JMeter).
+
+## Running Performance Tests
+
+```bash
+# Using k6
+k6 run scripts/load-test.js
+
+# Using JMeter
+jmeter -n -t scripts/test-plan.jmx -l reports/results.jtl
+```
+
+## Test Types
+
+- Load testing
+- Stress testing
+- Endurance testing
+- Spike testing

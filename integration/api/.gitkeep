@@ -1,0 +1,14 @@
+# API Integration Tests
+
+This directory contains API integration tests.
+
+## Running Tests
+
+```bash
+./run-api-tests.sh
+```
+
+## Requirements
+
+- Backend service must be running
+- Test database must be configured

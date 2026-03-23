@@ -1,0 +1,9 @@
+# E2E Test Fixtures
+
+This directory contains test fixtures and test data for E2E tests.
+
+## Contents
+
+- User test data
+- Mock API responses
+- Test configuration files

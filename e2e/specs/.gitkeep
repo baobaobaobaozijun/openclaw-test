@@ -1,0 +1,18 @@
+# E2E Test Specifications
+
+This directory contains Playwright/Cypress E2E test specifications.
+
+## Setup
+
+```bash
+npm install
+npx playwright install
+```
+
+## Running Tests
+
+```bash
+npm run test           # Run all tests
+npm run test:headed    # Run with browser UI
+npm run test:debug     # Debug mode
+```

@@ -1,0 +1,12 @@
+# Unit Test Placeholder
+
+This directory contains unit tests for the frontend.
+
+## Setup
+
+1. Ensure Node.js is installed
+2. Run: `npm install` then `npm run test`
+
+## Structure
+
+Place Jest/Vitest test files here matching the component structure.
