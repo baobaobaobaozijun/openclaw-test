@@ -1,0 +1,67 @@
+version: '3.8'
+
+services:
+  backend:
+    image: openclaw-backend:latest
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_NAME=baozipu
+      - DB_USER=root
+      - DB_PASSWORD=${DB_PASSWORD}
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - mysql
+      - redis
+    networks:
+      - baozipu-net
+    restart: always
+
+  frontend:
+    image: openclaw-frontend:latest
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    environment:
+      - VITE_API_BASE_URL=http://localhost:8081
+    depends_on:
+      - backend
+    networks:
+      - baozipu-net
+    restart: always
+
+  mysql:
+    image: registry.cn-hangzhou.aliyuncs.com/library/mysql:8.0
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+      - MYSQL_DATABASE=baozipu
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - baozipu-net
+    restart: always
+
+  redis:
+    image: registry.cn-hangzhou.aliyuncs.com/library/redis:7-alpine
+    volumes:
+      - redis-data:/data
+    networks:
+      - baozipu-net
+    restart: always
+
+networks:
+  baozipu-net:
+    driver: bridge
+
+volumes:
+  mysql-data:
+  redis-data:
